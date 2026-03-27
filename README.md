@@ -1,51 +1,26 @@
 # DBMS — Repositorio de Bases de Datos
 
-Este repositorio contiene ejemplos prácticos para levantar distintos sistemas gestores de bases de datos (SGBD) de forma local usando Docker.
+Repositorio para levantar **sistemas gestores de bases de datos (DBMS)** en local con **Docker** y **Docker Compose**. Cada motor va en su propia rama, con su `docker-compose` (y demás archivos) listos para usar.
 
-Cada base de datos vive en su propia rama con una configuración independiente (Dockerfile, Docker Compose y README).
+Por ahora están disponibles:
 
-## Ramas
-
-| Rama | Base de datos | Descripción |
-|------|---------------|-------------|
-| [`01-mariadb`](../../tree/01-mariadb) | MariaDB | Base de datos relacional compatible con MySQL + Adminer |
-| [`02-postgres`](../../tree/02-postgres) | PostgreSQL | Base de datos relacional avanzada de código abierto + Adminer |
+| Rama | Motor | Interfaz web |
+|------|--------|--------------|
+| [`01-mariadb`](https://github.com/Diego-glitch-cloud/dbms/tree/01-mariadb) | MariaDB | Adminer |
+| [`02-postgresql`](https://github.com/Diego-glitch-cloud/dbms/tree/02-postgresql) | PostgreSQL | pgAdmin |
 
 ## Cómo usar
 
-1. Cambia a la rama de la base de datos que quieras explorar:
+1. Clona el repositorio (si aún no lo tienes).
+2. Cambia a la rama del motor que quieras:
    ```bash
    git checkout 01-mariadb
    ```
-2. Sigue las instrucciones en el `README.md` de esa rama.
-
-## Dataset compartido
-
-Todas las ramas usan el mismo dataset para que puedas ejecutar las mismas consultas en cualquier DBMS y comparar comportamiento y sintaxis.
-
-El dataset está en la carpeta `sql/` en la raíz del repositorio:
-
-| Archivo | Descripción |
-|---------|-------------|
-| [`sql/ddl.sql`](./sql/ddl.sql) | Crea la base de datos y las tablas |
-| [`sql/dml.sql`](./sql/dml.sql) | Inserta datos de ejemplo |
-| [`sql/queries.sql`](./sql/queries.sql) | Consultas de ejemplo (JOINs, agregaciones, etc.) |
-
-### Esquema
-
-El dataset modela una empresa con empleados, departamentos, proyectos y turnos:
-
-- **`departamentos`** — áreas de la empresa
-- **`empleados`** — personal con referencia a su departamento y jefe (autorreferencia)
-- **`turnos`** — turnos de trabajo disponibles
-- **`proyectos`** — proyectos activos e históricos
-- **`empleados_proyectos`** — relación muchos a muchos entre empleados y proyectos
-
-El esquema está diseñado para practicar todos los tipos de JOIN: INNER, LEFT, RIGHT, FULL OUTER, CROSS, SELF, NATURAL y USING.
-
-## Comparación de DBMS
-
-Ver [`COMPARISON.md`](./COMPARISON.md) para una tabla comparativa de los sistemas incluidos.
+   o
+   ```bash
+   git checkout 02-postgresql
+   ```
+3. En esa rama, abre el `README.md` correspondiente y sigue los pasos (puertos, usuarios y acceso a Adminer o pgAdmin).
 
 ## Requisitos
 
