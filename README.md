@@ -1,11 +1,11 @@
 # 02 — PostgreSQL
 
-Configuración para levantar una instancia de **PostgreSQL** junto con **Adminer** para visualizar y administrar los datos desde el navegador.
+Configuración para levantar una instancia de PostgreSQL junto con Adminer y pgAdmin para visualizar y administrar los datos desde el navegador.
 
 ## Requisitos
 
-- [Docker](https://docs.docker.com/get-docker/)
-- [Docker Compose](https://docs.docker.com/compose/install/)
+- Docker
+- Docker Compose
 
 ## Levantar los contenedores
 
@@ -18,13 +18,15 @@ docker compose up -d
 | Servicio | URL | Usuario | Contraseña |
 |----------|-----|---------|------------|
 | Adminer  | http://localhost:8080 | `postgres` | `root` |
+| pgAdmin  | http://localhost:5050 | `admin@admin.com` | `admin` |
 
 En Adminer selecciona:
-- **Sistema:** PostgreSQL
-- **Servidor:** `postgres`
-- **Usuario:** `postgres`
-- **Contraseña:** `root`
-- **Base de datos:** `dbms` (opcional)
+
+- Sistema: PostgreSQL
+- Servidor: postgres
+- Usuario: postgres
+- Contraseña: root
+- Base de datos: dbms (opcional)
 
 ## Detener los contenedores
 
