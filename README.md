@@ -28,6 +28,14 @@ En Adminer selecciona:
 - Contraseña: root
 - Base de datos: dbms (opcional)
 
+Para pgadmin:
+
+- Host name/address: postgres
+- Port: 5432
+- Maintenance database: dbms
+- Username: postgres
+- Password: root
+
 ## Detener los contenedores
 
 ```bash
